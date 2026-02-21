@@ -91,15 +91,15 @@ export default function AntigravityPlane({
         group.current.position.x = targetX;
         group.current.position.y = targetY;
         // Smooth Z arrival
-        THREE.MathUtils.damp(group.current.position, 'z', targetZ, 4, delta);
+        group.current.position.z = THREE.MathUtils.damp(group.current.position.z, targetZ, 4, delta);
 
         // Dynamic Rotation - Tilt towards cursor
         const targetRotX = (y / viewport.height) * 0.3 - attractY * 0.2;
         const targetRotY = -(x / viewport.width) * 0.3 + attractX * 0.2;
 
         // Lerp rotation
-        THREE.MathUtils.damp(group.current.rotation, 'x', targetRotX, 3, delta);
-        THREE.MathUtils.damp(group.current.rotation, 'y', targetRotY, 3, delta);
+        group.current.rotation.x = THREE.MathUtils.damp(group.current.rotation.x, targetRotX, 3, delta);
+        group.current.rotation.y = THREE.MathUtils.damp(group.current.rotation.y, targetRotY, 3, delta);
     });
 
     const handleClick = (e: any) => {
@@ -115,7 +115,7 @@ export default function AntigravityPlane({
                 url={url}
                 transparent
                 opacity={0.9}
-                scale={[3, 4, 1]}
+                scale={[3, 4]}
                 toneMapped={false}
                 onClick={handleClick}
                 onPointerOver={() => { document.body.style.cursor = 'pointer' }}

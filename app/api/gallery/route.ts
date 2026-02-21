@@ -4,8 +4,6 @@ import { promises as fs } from 'fs';
 
 const dataFilePath = path.join(process.cwd(), 'data', 'gallery.json');
 
-export const dynamic = 'force-dynamic';
-
 export async function GET() {
     try {
         const fileBuffer = await fs.readFile(dataFilePath, 'utf-8');

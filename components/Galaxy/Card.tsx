@@ -119,7 +119,7 @@ export default function PhotoCard({ id, rowIndex, colIndex, url, description, le
         <group ref={group}>
             <Image
                 url={url}
-                scale={[3 * dna.scale, 4 * dna.scale, 1]}
+                scale={[3 * dna.scale, 4 * dna.scale]}
                 transparent
                 opacity={0.9}
                 toneMapped={false}
