@@ -154,6 +154,11 @@ export default function AdminPage() {
                         onChange={handleFileSelect}
                     />
 
+                    {/* Hosting Warning */}
+                    <div className="bg-yellow-500/10 border border-yellow-500/50 p-4 rounded-lg mb-8 text-yellow-200 text-sm">
+                        <p><strong>Note:</strong> Live hosting on GitHub Pages is static. Uploads only work locally. To update the live site, upload photos here on <strong>Localhost</strong>, then commit and push <code>public/gallery.json</code> and the <code>public/gallery/</code> folder to GitHub.</p>
+                    </div>
+
                     {uploading ? (
                         <p className="animate-pulse text-xl">TRANSMITTING TO VOID...</p>
                     ) : (

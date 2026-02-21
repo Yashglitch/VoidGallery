@@ -27,7 +27,9 @@ export default function GalaxyEngine() {
     const [photos, setPhotos] = useState<any[]>([]);
 
     useEffect(() => {
-        fetch('/api/gallery')
+        // In static export, we fetch the gallery.json directly from the public folder
+        // or a static asset path.
+        fetch('/gallery.json')
             .then(res => res.json())
             .then(data => setPhotos(data))
             .catch(err => console.error('Failed to load galaxy:', err));
